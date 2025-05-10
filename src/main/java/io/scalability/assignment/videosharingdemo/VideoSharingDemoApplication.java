@@ -1,4 +1,4 @@
-package io.john.amiscaray.videosharingdemo;
+package io.scalability.assignment.videosharingdemo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -8,7 +8,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @SpringBootApplication
 public class VideoSharingDemoApplication {
-
     public static void main(String[] args) {
         SpringApplication.run(VideoSharingDemoApplication.class, args);
     }

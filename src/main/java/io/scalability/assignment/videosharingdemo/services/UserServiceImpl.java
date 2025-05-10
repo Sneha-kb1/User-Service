@@ -1,25 +1,22 @@
-package io.john.amiscaray.videosharingdemo.services;
+package io.scalability.assignment.videosharingdemo.services;
 
-import io.john.amiscaray.videosharingdemo.domain.User;
+import io.scalability.assignment.videosharingdemo.domain.User;
 // import io.john.amiscaray.videosharingdemo.services.UserService;
-import io.john.amiscaray.videosharingdemo.exceptions.UserAlreadyExistsException;
-import io.john.amiscaray.videosharingdemo.exceptions.UserNotFoundException;
-import io.john.amiscaray.videosharingdemo.repo.UserRepo;
+import io.scalability.assignment.videosharingdemo.exceptions.UserAlreadyExistsException;
+import io.scalability.assignment.videosharingdemo.exceptions.UserNotFoundException;
+import io.scalability.assignment.videosharingdemo.repo.UserRepo;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-import org.springframework.web.multipart.MultipartFile;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.util.List;
-import java.util.ArrayList;
 
 @Service
-@AllArgsConstructor
 public class UserServiceImpl implements UserService{
-    private UserRepo repo;
+    private final UserRepo repo;
+    // Manual constructor injection (NO Lombok)
+    public UserServiceImpl(UserRepo repo) {
+        this.repo = repo;
+    }
 
     @Override
     public void register(String username, String password) {

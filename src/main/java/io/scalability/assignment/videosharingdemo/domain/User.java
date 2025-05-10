@@ -1,4 +1,4 @@
-package io.john.amiscaray.videosharingdemo.domain;
+package io.scalability.assignment.videosharingdemo.domain;
 
 
 import jakarta.persistence.Id;
@@ -8,8 +8,8 @@ import lombok.NoArgsConstructor;
 import jakarta.persistence.*;
 
 @Entity
+@Table(name = "app_user")
 @Data
-@NoArgsConstructor
 public class User{
         @Id
         @GeneratedValue(strategy = GenerationType.AUTO)
@@ -29,11 +29,15 @@ public class User{
             this.password = password;
             // this.data = data;
         }
+        // No-argument constructor explicitly defined (for Hibernate)
+        public User() {
+            // No need to do anything here
+        }
 
         public String getUsername() {
             return username;
         }
-    
+
         public int getPassword() {
             return password;
         }
@@ -41,7 +45,7 @@ public class User{
         public void setUsername(String username) {
             this.username = username;
         }
-    
+
         public void setPassword(int password) {
             this.password = password;
         }

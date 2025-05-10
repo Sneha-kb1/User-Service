@@ -1,4 +1,4 @@
-package io.john.amiscaray.videosharingdemo.exceptions;
+package io.scalability.assignment.videosharingdemo.exceptions;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
